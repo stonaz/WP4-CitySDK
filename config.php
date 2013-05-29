@@ -5,7 +5,7 @@ $host= 'localhost';
 $user = 'root';
 $pass = 'st3f4n0';
 $dbname = 'gim1';
-$mdbFilename = "c:\gim1.mdb";
+
 
 $sql_strade="SELECT CASE strade.name
 WHEN NULL

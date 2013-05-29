@@ -5,27 +5,27 @@
  */
 function add_feature_measurements($row,&$features)
 {
-                        //print "FOUND $test<br>";
-                        $coordinates=get_coords($row['CoordinateTrattoStradale']) ;
-                        $features1=      array(
-                                        "type"=> "Feature",
-                                        "id"=> ($row['ID']*$row['Direzione']),
-                                        "properties"=>array(
-                                                      "LOCATION"=> utf8_encode($row['NomeTrattoStradale']),
-                                                      "TIMESTAMP"=> $row['DataOraRilevamento'],
-                                                      "VELOCITY"=> intval($row['VelocitaRilevataChilometriOrari'])
-                                                      
-                                                          ),
-                                        "geometry"=>array(
-                    
-                                                      "type"=> "LineString",
-                                                      "coordinates"=> $coordinates
-                       
-                                                        )
-                                                  )             
-                        ;
-                     
-                        array_push($features,$features1);
+    
+    $coordinates=get_coords($row['CoordinateTrattoStradale']) ;
+    $features1=      array(
+		    "type"=> "Feature",
+		    "id"=> ($row['ID']*$row['Direzione']),
+		    "properties"=>array(
+				  "LOCATION"=> utf8_encode($row['NomeTrattoStradale']),
+				  "TIMESTAMP"=> $row['DataOraRilevamento'],
+				  "VELOCITY"=> intval($row['VelocitaRilevataChilometriOrari'])
+				  
+				      ),
+		    "geometry"=>array(
+
+				  "type"=> "LineString",
+				  "coordinates"=> $coordinates
+   
+				    )
+			      )             
+    ;
+ 
+    array_push($features,$features1);
 }
 
 /*
@@ -34,25 +34,25 @@ function add_feature_measurements($row,&$features)
  */
 function add_feature_streets($row,&$features)
 {
-                        //print "FOUND $test<br>";
-                        $coordinates=get_coords($row['CoordinateTrattoStradale']) ;
-                        $features1=      array(
-                                        "type"=> "Feature",
-                                        "id"=> ($row['ID']*$row['Direzione']),
-                                        "properties"=>array(
-                                                      "LOCATION"=> utf8_encode($row['NomeTrattoStradale']),
-                                                      
-                                                          ),
-                                        "geometry"=>array(
-                    
-                                                      "type"=> "LineString",
-                                                      "coordinates"=> $coordinates
-                       
-                                                        )
-                                                  )             
-                        ;
-                     
-                        array_push($features,$features1);
+                        
+    $coordinates=get_coords($row['CoordinateTrattoStradale']) ;
+    $features1=      array(
+		    "type"=> "Feature",
+		    "id"=> ($row['ID']*$row['Direzione']),
+		    "properties"=>array(
+				  "LOCATION"=> utf8_encode($row['NomeTrattoStradale']),
+				  
+				      ),
+		    "geometry"=>array(
+
+				  "type"=> "LineString",
+				  "coordinates"=> $coordinates
+   
+				    )
+			      )             
+    ;
+ 
+    array_push($features,$features1);
 }
 
 /*
